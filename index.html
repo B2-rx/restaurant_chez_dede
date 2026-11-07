@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Chez Dédé · Restaurant à Libreville</title>
+    <meta
+      name="description"
+      content="Chez Dédé, restaurant à Libreville, avenue des Bantus. Un menu sans carte, composé en cuisine, à partir de 20 000 FCFA par table. Réservation sur WhatsApp. Mardi au dimanche, 11 h 30 à 23 h 30."
+    />
+
+    <!-- Maquette : retirer la ligne suivante à la mise en ligne définitive -->
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#1f0a07" />
+
+    <!-- Aperçu lors d'un partage. À la mise en ligne : mettre l'URL absolue de og.jpg -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Chez Dédé · Restaurant à Libreville" />
+    <meta
+      property="og:description"
+      content="Un menu sans carte, composé en cuisine. Réservation sur WhatsApp."
+    />
+    <meta property="og:image" content="og.jpg" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="fonts/newsreader-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/karla-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Active les animations seulement si JavaScript fonctionne -->
+    <script>
+      document.documentElement.className = "js";
+    </script>
+  </head>
+
+  <body>
+    <!-- Barre de progression de lecture -->
+    <div class="progres" aria-hidden="true"></div>
+
+    <!-- ===== EN-TÊTE ===== -->
+    <header class="entete-site" id="entete">
+      <div class="entete-in">
+        <a class="marque" href="#haut">Chez Dédé</a>
+
+        <!-- Navigation ordinateur -->
+        <nav class="nav-bureau" aria-label="Navigation principale">
+          <a href="#offre">Le principe</a>
+          <a href="#plats">Plats</a>
+          <a href="#avis">Avis</a>
+          <a href="#a-propos">À propos</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Bouton du menu téléphone -->
+        <button
+          class="burger"
+          id="burger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Ouvrir le menu"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Menu téléphone (plein écran) -->
+    <nav class="menu-mobile" id="menu" aria-label="Menu">
+      <a style="--i: 0" href="#offre">Le principe</a>
+      <a style="--i: 1" href="#plats">Plats</a>
+      <a style="--i: 2" href="#avis">Avis</a>
+      <a style="--i: 3" href="#a-propos">À propos</a>
+      <a style="--i: 4" href="#contact">Contact</a>
+    </nav>
+
+    <main id="haut">
+      <!-- ===== 1. PROMESSE : premier écran, un seul bouton principal ===== -->
+      <div class="bois-texture">
+        <section class="wrap hero">
+          <div>
+            <p class="label a" style="--i: 0">Restaurant · Libreville</p>
+            <h1 class="a" style="--i: 1">
+              Un menu sans carte, composé en cuisine.
+            </h1>
+            <p class="sous a" style="--i: 2">
+              Chez Dédé, vous fixez le budget. La cuisine choisit les plats.
+            </p>
+
+            <!-- Lien WhatsApp : le même partout sur la page -->
+            <a
+              class="btn a"
+              data-cta
+              style="--i: 3"
+              href="https://wa.me/24162125800?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20table.%0ADate%20%3A%0ANombre%20de%20personnes%20%3A"
+              >Réserver sur WhatsApp</a
+            >
+
+            <!-- Note Google et état d'ouverture (calculé par le script) -->
+            <p class="preuve a" style="--i: 4">
+              <a href="#avis">4,6 sur 5 · 103 avis Google</a>
+              <span id="statut">Mardi au dimanche, 11 h 30 à 23 h 30</span>
+            </p>
+          </div>
+
+          <img
+            class="hero-photo"
+            id="photo-hero"
+            src="assets/hero.jpg"
+            width="900"
+            height="1200"
+            alt="Trois plats de riz et de pommes de terre dans des bols noirs, sur un chariot en inox"
+          />
+        </section>
+      </div>
+
+      <!-- ===== 2. OFFRE : le principe ===== -->
+      <section class="bande bande-nuit" id="offre" style="--de: var(--nuit)">
+        <div class="wrap offre">
+          <div class="r">
+            <p class="label">Le principe</p>
+            <h2>Pas de tarif par plat.</h2>
+            <span class="trait"></span>
+          </div>
+
+          <div class="r" style="--i: 1">
+            <p>
+              Vous venez avec un budget. Les plats arrivent à table, l'un après
+              l'autre.
+            </p>
+            <p>
+              Bières, vins, cocktails, cafés et desserts complètent la table.
+            </p>
+
+            <!-- À valider avec la propriétaire : montant, par table ou par personne -->
+            <p class="prix">20 000 FCFA</p>
+            <p class="petit">Budget minimal par table</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Plats servis : arches de tailles différentes ===== -->
+      <section class="bande bande-bois" id="plats" style="--de: var(--nuit)">
+        <div class="wrap">
+          <p class="label r">Plats servis</p>
+
+          <!-- --l = largeur, --h = hauteur, data-v = intensité du décalage au défilement.
+             Photos en 215 x 280 px : à remplacer par des originaux (voir data-full). -->
+          <ul class="galerie" id="galerie">
+            <li
+              class="arche r"
+              style="--l: 200px; --h: 260px; --i: 0"
+              data-v="0.05"
+            >
+              <button
+                class="vignette"
+                type="button"
+                aria-label="Agrandir la photo"
+              >
+                <img
+                  src="assets/plat-1.jpg"
+                  width="215"
+                  height="280"
+                  alt="Plat servi dans une assiette blanche, garni d'herbes et d'une salsa"
+                />
+              </button>
+            </li>
+            <li
+              class="arche r"
+              style="--l: 215px; --h: 280px; --i: 1"
+              data-v="0.09"
+            >
+              <button
+                class="vignette"
+                type="button"
+                aria-label="Agrandir la photo"
+              >
+                <img
+                  src="assets/plat-2.jpg"
+                  width="215"
+                  height="280"
+                  alt="Tranches d'orange aux grains de grenade"
+                />
+              </button>
+            </li>
+            <li
+              class="arche r"
+              style="--l: 190px; --h: 246px; --i: 2"
+              data-v="0.03"
+            >
+              <button
+                class="vignette"
+                type="button"
+                aria-label="Agrandir la photo"
+              >
+                <img
+                  src="assets/plat-3.jpg"
+                  width="215"
+                  height="280"
+                  alt="Crustacés grillés aux poivrons, pommes de terre sautées en arrière-plan"
+                />
+              </button>
+            </li>
+            <li
+              class="arche r"
+              style="--l: 215px; --h: 280px; --i: 3"
+              data-v="0.08"
+            >
+              <button
+                class="vignette"
+                type="button"
+                aria-label="Agrandir la photo"
+              >
+                <img
+                  src="assets/plat-4.jpg"
+                  width="215"
+                  height="280"
+                  alt="Tranches de bœuf et pommes de terre dorées dans des plats noirs"
+                />
+              </button>
+            </li>
+            <li
+              class="arche r"
+              style="--l: 200px; --h: 260px; --i: 4"
+              data-v="0.04"
+            >
+              <button
+                class="vignette"
+                type="button"
+                aria-label="Agrandir la photo"
+              >
+                <img
+                  src="assets/plat-5.jpg"
+                  width="215"
+                  height="280"
+                  alt="Salade de haricots rouges, maïs, carotte et concombre"
+                />
+              </button>
+            </li>
+          </ul>
+
+          <!-- Flèches sous les photos, affichées seulement si la rangée déborde -->
+          <div class="fleches" id="fleches" hidden>
+            <button type="button" id="prec" aria-label="Plats précédents">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 5l-7 7 7 7" />
+              </svg>
+            </button>
+            <button type="button" id="suiv" aria-label="Plats suivants">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 3. PREUVES : note et avis Google ===== -->
+      <section class="bande bande-veine" id="avis" style="--de: var(--bois)">
+        <div class="wrap avis-grille">
+          <div class="r">
+            <p class="label">Avis</p>
+            <p class="note">4,6 sur 5</p>
+            <p class="petit">103 avis sur Google, relevé le 6 novembre 2026.</p>
+            <a
+              class="lien"
+              href="https://www.google.com/maps/place/Chez+D%C3%A9d%C3%A9/@0.4430902,9.4214658,17z/data=!4m8!3m7!1s0x107f25d17259d4e7:0xfd8466a905e06d38!8m2!3d0.4430902!4d9.4240407!9m1!1b1!16s%2Fg%2F11j4lvqrb3"
+              >Lire les avis sur Google</a
+            >
+          </div>
+
+          <div class="citations">
+            <blockquote class="r" style="--i: 1">
+              <p>
+                « on a passé une nuit très agréable […] le bœuf est très bon et
+                nous donne une grande surprise, la crevette est très fraîche […]
+                »
+              </p>
+              <cite>yanli liu, avis Google</cite>
+            </blockquote>
+            <blockquote class="r" style="--i: 2" lang="en">
+              <p>
+                « Each dish we tried had its own unique taste, bursting with
+                flavour. […] What truly made the evening stand out was the
+                personal touch from the owner. »
+              </p>
+              <cite>Amit Motee, avis Google (rédigé en anglais)</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 4. CONFIANCE : à propos ===== -->
+      <section
+        class="bande bande-nuit"
+        id="a-propos"
+        style="--de: var(--veine)"
+      >
+        <div class="wrap">
+          <p class="label r">À propos</p>
+          <h2 class="r" style="--i: 1">Le lieu</h2>
+
+          <img
+            class="salle r"
+            src="assets/salle.jpg"
+            width="1080"
+            height="420"
+            loading="lazy"
+            alt="Salle du restaurant : tables aux nappes imprimées rouges et bleues, photographies animalières aux murs, girafes en bois"
+          />
+          <p class="r">
+            Une salle calme et décontractée, des photographies animalières aux
+            murs, des nappes en tissu imprimé.
+          </p>
+
+          <dl class="r">
+            <dt>Horaires</dt>
+            <dd>Mardi au dimanche, 11 h 30 à 23 h 30.<br />Fermé le lundi.</dd>
+            <dt>Sur place</dt>
+            <dd>Service à table, terrasse, bar.</dd>
+            <dt>Aussi</dt>
+            <dd>Traiteur.</dd>
+            <dt>Groupes</dt>
+            <dd>Groupes bienvenus.</dd>
+            <dt>Accès</dt>
+            <dd>Parking gratuit, stationnement facile.</dd>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ===== 5. CONTACT : réservation et carte ===== -->
+      <section
+        class="bande bande-bois bois-texture double"
+        id="contact"
+        style="--de: var(--nuit)"
+      >
+        <div class="wrap contact">
+          <div class="r">
+            <p class="label">Contact</p>
+            <h2>Réserver</h2>
+            <p style="margin-top: 1.25rem">
+              Écrivez-nous sur WhatsApp avec la date et le nombre de personnes.
+            </p>
+
+            <a
+              class="btn"
+              data-cta
+              href="https://wa.me/24162125800?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20table.%0ADate%20%3A%0ANombre%20de%20personnes%20%3A"
+              >Réserver sur WhatsApp</a
+            >
+
+            <p>
+              <strong>Chez Dédé</strong><br />CCVF+6JM, avenue des Bantus,
+              Libreville
+            </p>
+            <p>
+              <a href="tel:+24162125800">+241 62 12 58 00</a>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=0.4430902,9.4240407"
+                >Itinéraire</a
+              >
+            </p>
+          </div>
+
+          <!-- La carte ne se charge qu'au clic (voir le script) -->
+          <div class="r" style="--i: 1">
+            <div class="carte" id="carte">
+              <button class="btn" type="button" id="voir">
+                Afficher la carte
+              </button>
+            </div>
+            <p class="petit" style="margin-top: 0.75rem">
+              Carte OpenStreetMap, chargée seulement au clic.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== PIED DE PAGE ===== -->
+    <footer class="bande bande-nuit pied" style="--de: var(--bois)">
+      <div class="pied-in">
+        <p>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Confidentialité</a>
+        </p>
+        <p>
+          Proposition de site réalisée à partir d'informations publiques.
+          Contenus à valider par le restaurant.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a
+      class="wa"
+      id="wa"
+      aria-label="Réserver sur WhatsApp"
+      href="https://wa.me/24162125800?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20table.%0ADate%20%3A%0ANombre%20de%20personnes%20%3A"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 5h16v11H9l-5 4z" />
+      </svg>
+    </a>
+
+    <!-- Photo agrandie : s'ouvre au clic sur une arche -->
+    <dialog id="visionneuse" aria-label="Photo agrandie">
+      <img id="grande" alt="" />
+      <button type="button" id="fermer" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </dialog>
+
+    <script>
+      (function () {
+        var reduit = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        var $ = function (id) {
+          return document.getElementById(id);
+        };
+
+        /* ---------- 1. État d'ouverture (fuseau Africa/Libreville) ----------
+         Ouvert du mardi au dimanche, de 11 h 30 (690 min) à 23 h 30 (1410 min). */
+        var statut = $("statut");
+        try {
+          var parties = new Intl.DateTimeFormat("en-GB", {
+            timeZone: "Africa/Libreville",
+            weekday: "short",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+          }).formatToParts(new Date());
+          var lire = function (type) {
+            return parties.filter(function (p) {
+              return p.type === type;
+            })[0].value;
+          };
+          var jour = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(
+            lire("weekday"),
+          );
+          var minutes = (+lire("hour") % 24) * 60 + +lire("minute");
+          var noms = [
+            "dimanche",
+            "lundi",
+            "mardi",
+            "mercredi",
+            "jeudi",
+            "vendredi",
+            "samedi",
+          ];
+
+          if (jour !== 1 && minutes >= 690 && minutes < 1410) {
+            statut.textContent = "Ouvert maintenant, jusqu\u2019à 23 h 30";
+          } else if (jour !== 1 && minutes < 690) {
+            statut.textContent = "Fermé, ouvre aujourd\u2019hui à 11 h 30";
+          } else {
+            var suivant = (jour + 1) % 7,
+              demain = suivant;
+            if (suivant === 1) suivant = 2; // le lundi est fermé
+            statut.textContent =
+              "Fermé, ouvre " +
+              (suivant === demain ? "demain" : noms[suivant]) +
+              " à 11 h 30";
+          }
+        } catch (e) {
+          /* on garde le texte par défaut */
+        }
+
+        /* ---------- 2. Apparition des blocs au défilement (une seule fois) ---------- */
+        var blocs = document.querySelectorAll(".r");
+        if ("IntersectionObserver" in window) {
+          var apparition = new IntersectionObserver(
+            function (entrees) {
+              entrees.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("vu");
+                  apparition.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.15 },
+          );
+          blocs.forEach(function (b) {
+            apparition.observe(b);
+          });
+        } else {
+          blocs.forEach(function (b) {
+            b.classList.add("vu");
+          });
+        }
+
+        /* ---------- 3. Défilement : en-tête, progression, parallaxe ---------- */
+        var entete = $("entete"),
+          photoHero = $("photo-hero"),
+          galerie = $("galerie");
+        var arches = galerie.querySelectorAll(".arche");
+        var menuOuvert = false,
+          dernierY = 0,
+          enAttente = false;
+
+        function auDefilement() {
+          var y = window.scrollY;
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+
+          // Barre de progression
+          document.documentElement.style.setProperty(
+            "--p",
+            max > 0 ? y / max : 0,
+          );
+
+          // En-tête : fond plein après 30 px, masqué en descendant, réaffiché en remontant
+          entete.classList.toggle("fond-plein", y > 30);
+          if (!menuOuvert) {
+            if (y > dernierY + 4 && y > 240) entete.classList.add("cache");
+            else if (y < dernierY - 4) entete.classList.remove("cache");
+          }
+          dernierY = y;
+
+          // Parallaxe : la photo du haut et les arches bougent à des vitesses différentes
+          if (!reduit) {
+            photoHero.style.setProperty(
+              "--py",
+              -Math.min(y, 700) * 0.06 + "px",
+            );
+            var r = galerie.getBoundingClientRect();
+            var d = Math.max(
+              -500,
+              Math.min(500, r.top + r.height / 2 - window.innerHeight / 2),
+            );
+            arches.forEach(function (a) {
+              a.style.setProperty("--py", -d * a.dataset.v + "px");
+            });
+          }
+          enAttente = false;
+        }
+
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!enAttente) {
+              enAttente = true;
+              requestAnimationFrame(auDefilement);
+            }
+          },
+          { passive: true },
+        );
+        auDefilement();
+
+        /* ---------- 4. Menu téléphone ---------- */
+        var burger = $("burger"),
+          menu = $("menu");
+
+        function basculerMenu(ouvrir) {
+          menuOuvert = ouvrir;
+          menu.classList.toggle("ouvert", ouvrir);
+          burger.setAttribute("aria-expanded", ouvrir);
+          burger.setAttribute(
+            "aria-label",
+            ouvrir ? "Fermer le menu" : "Ouvrir le menu",
+          );
+          document.body.style.overflow = ouvrir ? "hidden" : "";
+          entete.classList.remove("cache");
+        }
+
+        burger.onclick = function () {
+          basculerMenu(!menuOuvert);
+        };
+        menu.querySelectorAll("a").forEach(function (a) {
+          a.onclick = function () {
+            basculerMenu(false);
+          };
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && menuOuvert) basculerMenu(false);
+        });
+
+        /* ---------- 5. Lien actif dans la navigation ---------- */
+        var liens = document.querySelectorAll(".nav-bureau a");
+        if ("IntersectionObserver" in window) {
+          var actif = new IntersectionObserver(
+            function (entrees) {
+              entrees.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                liens.forEach(function (l) {
+                  l.setAttribute(
+                    "aria-current",
+                    l.getAttribute("href") === "#" + e.target.id,
+                  );
+                });
+              });
+            },
+            { rootMargin: "-45% 0px -50% 0px" },
+          );
+          document
+            .querySelectorAll("#offre, #plats, #avis, #a-propos, #contact")
+            .forEach(function (s) {
+              actif.observe(s);
+            });
+        }
+
+        /* ---------- 6. Bouton WhatsApp flottant : masqué si un bouton Réserver est visible ---------- */
+        var wa = $("wa"),
+          visibles = new Set();
+        if ("IntersectionObserver" in window) {
+          var cta = new IntersectionObserver(function (entrees) {
+            entrees.forEach(function (e) {
+              if (e.isIntersecting) visibles.add(e.target);
+              else visibles.delete(e.target);
+            });
+            wa.classList.toggle("masque", visibles.size > 0);
+          });
+          document.querySelectorAll("[data-cta]").forEach(function (b) {
+            cta.observe(b);
+          });
+        }
+
+        /* ---------- 7. Flèches de la galerie (seulement si la rangée déborde) ---------- */
+        var fleches = $("fleches"),
+          prec = $("prec"),
+          suiv = $("suiv");
+
+        function majFleches() {
+          fleches.hidden = galerie.scrollWidth <= galerie.clientWidth + 2;
+          prec.disabled = galerie.scrollLeft < 4;
+          suiv.disabled =
+            galerie.scrollLeft + galerie.clientWidth >= galerie.scrollWidth - 4;
+        }
+
+        prec.onclick = function () {
+          galerie.scrollBy({
+            left: -galerie.clientWidth * 0.8,
+            behavior: "smooth",
+          });
+        };
+        suiv.onclick = function () {
+          galerie.scrollBy({
+            left: galerie.clientWidth * 0.8,
+            behavior: "smooth",
+          });
+        };
+        galerie.addEventListener("scroll", majFleches, { passive: true });
+        window.addEventListener("resize", majFleches);
+        majFleches();
+
+        /* ---------- 8. Photo agrandie au clic ----------
+         Pour une version haute définition, ajouter data-full="assets/xxx.jpg" sur le bouton. */
+        var vis = $("visionneuse"),
+          grande = $("grande");
+
+        document.querySelectorAll(".vignette").forEach(function (b) {
+          b.onclick = function () {
+            var img = b.querySelector("img");
+            grande.src = b.dataset.full || img.src;
+            grande.alt = img.alt;
+            vis.showModal();
+          };
+        });
+
+        vis.onclick = function (e) {
+          if (e.target !== grande) vis.close();
+        }; // clic à côté : fermer
+        $("fermer").onclick = function () {
+          vis.close();
+        }; // Échap ferme aussi
+
+        /* ---------- 9. Carte chargée seulement au clic (respect de la vie privée) ---------- */
+        $("voir").onclick = function () {
+          var cadre = document.createElement("iframe");
+          cadre.title = "Carte : Chez Dédé, avenue des Bantus, Libreville";
+          cadre.loading = "lazy";
+          cadre.src =
+            "https://www.openstreetmap.org/export/embed.html?bbox=9.4190%2C0.4405%2C9.4290%2C0.4455&layer=mapnik&marker=0.4430902%2C9.4240407";
+          var zone = $("carte");
+          zone.textContent = "";
+          zone.appendChild(cadre);
+        };
+      })();
+    </script>
+  </body>
+</html>
